@@ -1,0 +1,200 @@
+:root {
+    --bg-color: #efefef;
+    --text-color: #000000;
+    --container-border: gray;
+    --display-bg: #c0c0c0;
+    --display-text: #ffffff;
+    --btn-bg: #a9a9a9;
+    --btn-text: #ffffff;
+    --dark-btn-bg: #212020;
+    --dark-btn-text: #d28f29;
+    --equals-bg: #d28f29;
+    --equals-text: #ffffff;
+    --underline-color: #d28f29;
+    --footer-text: #888888;
+    --dot-color: #000;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --container-border: #444444;
+    --display-bg: #2a2a2a;
+    --display-text: #f0f0f0;
+    --btn-bg: #333333;
+    --btn-text: #f0f0f0;
+    --dark-btn-bg: #000000;
+    --dark-btn-text: #e0a83a;
+    --equals-bg: #e0a83a;
+    --equals-text: #121212;
+    --underline-color: #e0a83a;
+    --footer-text: #aaaaaa;
+    --dot-color: #fff;
+}
+
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;    
+     background-color: var(--bg-color);
+}
+
+body {
+    font-family: "Ndot55-Regular", regular, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@font-face {
+    font-family: "Ndot55-Regular";
+    src: url("fonts/Ndot55-Regular.otf") format("truetype");
+}
+
+.container {
+    width: 450px;
+    border: 1px solid var(--container-border);
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin: 0;
+    text-align: left;
+}
+
+.header p {
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-color: var(--underline-color);
+    text-decoration-thickness: 2px;
+    font-size: 16px;
+}
+
+#display {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 24px;
+    background: var(--display-bg);
+    color: var(--display-text);
+    border: none;
+    border-radius: 18px;
+    padding: 20px;
+    font-size: 42px;
+    text-align: right;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+    height: 64px;
+    border: none;
+    border-radius: 15px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.operator, .delete, .clear{
+    background: var(--dark-btn-bg);
+    color: var(--dark-btn-text);
+}
+
+.equals {
+    background: var(--equals-bg);
+    color: var(--equals-text);
+}
+
+.switch {
+    margin-top: 20px;
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-color: var(--underline-color);
+    text-decoration-thickness: 2px;
+    font-size: 14px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--footer-text);
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+
+    -webkit-mask-image: radial-gradient(circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+}
+
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    z-index: 10;
+}
+
+.mode-toggle img {
+    width: 40px;
+    height: 40px;
+    display: block;
+}

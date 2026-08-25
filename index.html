@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Nothing Calculator</title>
+</head>
+<body>
+    <main>  
+    <div class="header">
+        <h1>NotCal</h1>
+        <div class="header2">   
+        <p> by Janeyfifi </p>
+        </div>
+    </div>    
+   <button id="darkModeToggle" class="mode-toggle">
+    <img id="modeIcon" src="icons/moon.png" alt="Toggle dark mode">
+    </button>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+        <div class="buttons">
+
+            <button class="clear" onclick="clearDisplay()">C</button>         
+            <button class="operator" onclick="parenthesis()">()</button>
+            <button class="operator" onclick="percentage('%')">%</button>
+            <button class="operator" onclick="appendToDisplay('/')">÷</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">−</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button class="zero" onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="delete" onclick="deleteLastCharacter()">Del</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+        </div>
+        </div>    
+    </div>
+    <div class="footer">
+        <p>© 2026 Janeyfifi. All rights reserved.</p>
+    </div>
+</main>
+        <script src="script.js"></script>  
+</body>      
+</html>
