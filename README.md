@@ -1,4 +1,4 @@
-**NotCal****
+**NotCal**
 
 **A minimalist calculator web app inspired by the Nothing OS dot-matrix aesthetic — featuring a custom dot font, an interactive cursor-reactive background, and light/dark theme support.**
 
