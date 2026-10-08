@@ -38,3 +38,5 @@ Saves the preference to localStorage so it persists on reload
 
 License
 © 2026 Janeyfifi. All rights reserved.
+
+https://nothing-inspired-calculator.vercel.app/ 
